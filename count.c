@@ -1,39 +1,25 @@
 #include <stdio.h>
 #include <string.h>
 
-#define SIZE 100
-
-int main() {
-    char frame[SIZE];
-    int numFrames, numBytes, i;
-
-    printf("Enter the number of frames: ");
-    scanf("%d", &numFrames);
-
-    // Consume the newline character left behind by scanf
-    getchar();
-
-    // Read in the frames and perform operations on each frame
-    for (i = 0; i < numFrames; i++) {
-        printf("Enter frame %d: ", i+1);
-        fgets(frame,SIZE, stdin);
-            
-        // Remove the trailing newline character from fgets
-       frame[strcspn(frame, "\n")] = '\0';
-
-       
-       
-        numBytes=strlen(frame);
-        printf("Number of bytes in the frame: %d\n", numBytes);
-
-       
-        
-        printf("Received Frame: %s\n", frame);
+int main()
+{
+    int n;
+    printf("enter number of frames");
+    scanf("%d", &n);
+    char str[n][100];
+    int len;
+    char leng[10], output[1000];
+    for(int i=0; i<n; i++)
+    {
+        printf("enter %d frame bits", i+1);
+        scanf("%s", str[i]);
+        len = strlen(str[i]);
+        sprintf(leng, "%d", len);
+        strcat(output, str[i]);
+        strcat(output, leng);
     }
-
+    printf("1000001-");
+    printf("%s", output);
+    printf("-1000001");
     return 0;
 }
-
-
-
-

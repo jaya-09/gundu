@@ -1,0 +1,14 @@
+sudo su
+cd ns-allinone-[versionNumber]
+cd ns-[versionNumber]
+cd scratch
+gedit 1.cc
+cd ..
+./waf
+./waf --run scratch/1
+cd ..
+cd netanim-[versionNumber]
+export QT_X11_NO_MITSHM=1  (search xml file and open)
+./NetAnim
+
+
